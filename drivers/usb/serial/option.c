@@ -692,7 +692,12 @@ static const struct option_blacklist_info yuga_clm920_nc5_blacklist = {
 	.reserved = BIT(1) | BIT(4),
 };
 
+static const struct option_blacklist_info fibcom_blacklist = {
+	.reserved = BIT(4),
+};
+
 static const struct usb_device_id option_ids[] = {
+	{ USB_DEVICE(0x1508, 0x1001), .driver_info = (kernel_ulong_t)& fibcom_blacklist},
 	{ USB_DEVICE(OPTION_VENDOR_ID, OPTION_PRODUCT_COLT) },
 	{ USB_DEVICE(OPTION_VENDOR_ID, OPTION_PRODUCT_RICOLA) },
 	{ USB_DEVICE(OPTION_VENDOR_ID, OPTION_PRODUCT_RICOLA_LIGHT) },
