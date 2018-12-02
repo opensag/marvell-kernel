@@ -130,6 +130,12 @@ static int create_gpio_led(const struct gpio_led *template,
 		state = (template->default_state == LEDS_GPIO_DEFSTATE_ON);
 	}
 	led_dat->cdev.brightness = state ? LED_FULL : LED_OFF;
+
+	if (led_dat->cdev.brightness == LED_OFF && (!strcmp(led_dat->cdev.default_trigger, "timer"))) {
+		led_dat->cdev.blink_delay_on = 0;
+		led_dat->cdev.blink_delay_off = 500;
+	}
+
 	if (!template->retain_state_suspended)
 		led_dat->cdev.flags |= LED_CORE_SUSPENDRESUME;
 	if (template->panic_indicator)

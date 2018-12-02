@@ -79,7 +79,7 @@
 		};
 	};
 
-	/*gpio_keys_polled {
+	gpio_keys_polled {
                         compatible = "gpio-keys-polled";
                         #address-cells = <1>;
                         #size-cells = <0>;
@@ -89,7 +89,7 @@
                                 linux,code = <0x198>;
                                 gpios = <&gpionb 20 GPIO_ACTIVE_LOW>;
                         };  
-        };*/
+        };
 };
 
 &pcie0 {
