@@ -133,10 +133,10 @@
 	pinctrl-names = "default";
 	pinctrl-0 = <&i2c1_pins>;
 	status = "okay";
-	rtc@51  {
+	/*rtc@51  {
 		compatible = "nxp,pcf8563";
 		reg = <0x51>;
-	};
+	};*/
 };
 
 &mdio {
