@@ -84,6 +84,27 @@
 			linux,default-trigger = "timer";
 			default-state = "off";
 		};
+
+		led-4 {
+			label = "lte-0";
+			gpios = <&gpionb 1 GPIO_ACTIVE_LOW>;
+			linux,default-trigger = "timer";
+			default-state = "off";
+		};
+
+		led-5 {
+			label = "lte-1";
+			gpios = <&gpionb 4 GPIO_ACTIVE_LOW>;
+			linux,default-trigger = "timer";
+			default-state = "off";
+		};
+
+		led-6 {
+			label = "lte-2";
+			gpios = <&gpionb 21 GPIO_ACTIVE_LOW>;
+			linux,default-trigger = "timer";
+			default-state = "off";
+		};
 	};
 
 	gpio_keys_polled {
