@@ -68,14 +68,14 @@
 			label = "cloud";
 			linux,default-trigger = "timer";
 			gpios = <&gpionb 4 GPIO_ACTIVE_LOW>;
-			default-state = "on";
+			default-state = "off";
 		};
 
 		led-2 {
-			label = "alarm";
+			label = "sys";
 			linux,default-trigger = "timer";
 			gpios = <&gpionb 12 GPIO_ACTIVE_LOW>;
-			default-state = "off";
+			default-state = "on";
 		};
 
 		led-3 {
@@ -86,7 +86,7 @@
 		};
 
 		led-4 {
-			label = "lte_0";
+			label = "lte_2";
 			gpios = <&gpiosb 1 GPIO_ACTIVE_LOW>;
 			linux,default-trigger = "timer";
 			default-state = "off";
@@ -100,7 +100,7 @@
 		};
 
 		led-6 {
-			label = "lte_2";
+			label = "lte_0";
 			gpios = <&gpiosb 21 GPIO_ACTIVE_LOW>;
 			linux,default-trigger = "timer";
 			default-state = "off";
