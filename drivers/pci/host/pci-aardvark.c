@@ -955,6 +955,7 @@ static int advk_pcie_probe(struct platform_device *pdev)
 	struct pci_bus *bus, *child;
 	struct pci_host_bridge *bridge;
 	int ret, irq;
+        u32 reg;
 
 	bridge = devm_pci_alloc_host_bridge(dev, sizeof(struct advk_pcie));
 	if (!bridge)
@@ -1024,6 +1025,11 @@ static int advk_pcie_probe(struct platform_device *pdev)
 	advk_pcie_configure_mps(bus, pcie);
 
 	pci_bus_add_devices(bus);
+
+        reg = advk_readl(pcie, 0x6208);
+        reg |= 1 << 30;
+        advk_writel(pcie, reg, 0x6208);
+        printk("modify pcie erratum DIS_ORD_CHK %x\n", advk_readl(pcie, 0x6208));
 	return 0;
 }
 
