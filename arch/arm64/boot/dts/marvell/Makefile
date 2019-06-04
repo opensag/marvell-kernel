@@ -11,6 +11,7 @@ dtb-$(CONFIG_ARCH_MVEBU) += armada-3720-espressobin.dtb
 dtb-$(CONFIG_ARCH_MVEBU) += armada-3720-nmxx.dtb
 dtb-$(CONFIG_ARCH_MVEBU) += armada-3720-nm11.dtb
 dtb-$(CONFIG_ARCH_MVEBU) += armada-3720-nm14.dtb
+dtb-$(CONFIG_ARCH_MVEBU) += armada-3720-rc01.dtb
 dtb-$(CONFIG_ARCH_MVEBU) += armada-7040-db.dtb
 dtb-$(CONFIG_ARCH_MVEBU) += armada-7040-db-B.dtb
 dtb-$(CONFIG_ARCH_MVEBU) += armada-7040-db-C.dtb
