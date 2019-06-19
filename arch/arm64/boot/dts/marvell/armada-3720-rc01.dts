@@ -79,7 +79,7 @@
 		};
 
 		led-3 {
-			label = "lte";
+			label = "res";
 			gpios = <&gpionb 14 GPIO_ACTIVE_LOW>;
 			linux,default-trigger = "timer";
 			default-state = "off";
@@ -115,7 +115,7 @@
 		reset {
 			label = "reset";
 			linux,code = <0x198>;
-			gpios = <&gpionb 20 GPIO_ACTIVE_LOW>;
+			gpios = <&gpionb 3 GPIO_ACTIVE_LOW>;
 		};  
 	};
 };
@@ -172,7 +172,7 @@
 		compatible = "marvell,mv88e6085";
 		#address-cells = <1>;
 		#size-cells = <0>;
-		reg = <2>;
+		reg = <0>;
 
 		dsa,member = <0 0>;
 
