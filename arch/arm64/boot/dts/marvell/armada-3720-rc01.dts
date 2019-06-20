@@ -77,29 +77,29 @@
 			gpios = <&gpionb 12 GPIO_ACTIVE_LOW>;
 			default-state = "on";
 		};
-
+/*
 		led-3 {
-			label = "res";
+			label = "lte";
 			gpios = <&gpionb 14 GPIO_ACTIVE_LOW>;
 			linux,default-trigger = "timer";
 			default-state = "off";
 		};
-
-		led-4 {
+*/
+		led-3 {
 			label = "lte_2";
 			gpios = <&gpiosb 1 GPIO_ACTIVE_LOW>;
 			linux,default-trigger = "timer";
 			default-state = "off";
 		};
 
-		led-5 {
+		led-4 {
 			label = "lte_1";
 			gpios = <&gpiosb 4 GPIO_ACTIVE_LOW>;
 			linux,default-trigger = "timer";
 			default-state = "off";
 		};
 
-		led-6 {
+		led-5 {
 			label = "lte_0";
 			gpios = <&gpiosb 21 GPIO_ACTIVE_LOW>;
 			linux,default-trigger = "timer";
@@ -140,7 +140,7 @@
 &sdhci1 {
 	wp-inverted;
 	bus-width = <4>;
-	cd-gpios = <&gpionb 3 GPIO_ACTIVE_LOW>;
+	cd-gpios = <&gpionb 14 GPIO_ACTIVE_LOW>;
 	marvell,pad-type = "sd";
 	status = "okay";
 };
