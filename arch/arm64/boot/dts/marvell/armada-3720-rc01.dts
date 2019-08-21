@@ -87,21 +87,21 @@
 */
 		led-3 {
 			label = "lte_2";
-			gpios = <&gpiosb 1 GPIO_ACTIVE_LOW>;
+			gpios = <&gpiosb 1 GPIO_ACTIVE_HIGH>;
 			linux,default-trigger = "timer";
 			default-state = "off";
 		};
 
 		led-4 {
 			label = "lte_1";
-			gpios = <&gpiosb 4 GPIO_ACTIVE_LOW>;
+			gpios = <&gpiosb 4 GPIO_ACTIVE_HIGH>;
 			linux,default-trigger = "timer";
 			default-state = "off";
 		};
 
 		led-5 {
 			label = "lte_0";
-			gpios = <&gpiosb 21 GPIO_ACTIVE_LOW>;
+			gpios = <&gpiosb 21 GPIO_ACTIVE_HIGH>;
 			linux,default-trigger = "timer";
 			default-state = "off";
 		};
@@ -116,7 +116,7 @@
 			label = "reset";
 			linux,code = <0x198>;
 			gpios = <&gpionb 3 GPIO_ACTIVE_LOW>;
-		};  
+		};
 	};
 };
 
