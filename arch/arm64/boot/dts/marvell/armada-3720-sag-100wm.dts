@@ -65,52 +65,75 @@
                 compatible = "gpio-leds";
 
 		led-1 {
-			label = "cloud";
+			label = "sys";
 			linux,default-trigger = "timer";
-			gpios = <&gpionb 12 GPIO_ACTIVE_LOW>;
+			gpios = <&gpionb 11 GPIO_ACTIVE_LOW>;
 			default-state = "off";
 		};
 
 		led-2 {
-			label = "sys";
+			label = "cloud";
 			linux,default-trigger = "timer";
-			gpios = <&gpionb 11 GPIO_ACTIVE_LOW>;
+			gpios = <&gpionb 12 GPIO_ACTIVE_LOW>;
 			default-state = "on";
 		};
 
 		led-3 {
+			label = "wifi";
+			gpios = <&gpionb 13 GPIO_ACTIVE_LOW>;
+			linux,default-trigger = "timer";
+			default-state = "off";
+		};
+
+		led-4 {
 			label = "lte";
 			gpios = <&gpionb 14 GPIO_ACTIVE_LOW>;
 			linux,default-trigger = "timer";
 			default-state = "off";
 		};
 
-		led-4 {
-			label = "lte_2";
-			gpios = <&gpionb 17 GPIO_ACTIVE_LOW>;
+		led-5 {
+			label = "lte_0";
+			gpios = <&gpionb 15 GPIO_ACTIVE_LOW>;
 			linux,default-trigger = "timer";
 			default-state = "off";
 		};
 
-		led-5 {
+		led-6 {
 			label = "lte_1";
 			gpios = <&gpionb 16 GPIO_ACTIVE_LOW>;
 			linux,default-trigger = "timer";
 			default-state = "off";
 		};
 
-		led-6 {
-			label = "lte_0";
-			gpios = <&gpionb 15 GPIO_ACTIVE_LOW>;
-			linux,default-trigger = "timer";
-			default-state = "off";
-		};
 		led-7 {
-			label = "wifi";
-			gpios = <&gpionb 13 GPIO_ACTIVE_LOW>;
+			label = "lte_2";
+			gpios = <&gpionb 17 GPIO_ACTIVE_LOW>;
 			linux,default-trigger = "timer";
 			default-state = "off";
 		};
+
+		led-8 {
+			label = "4gpower";
+			gpios = <&gpionb 3 GPIO_ACTIVE_LOW>;
+			linux,default-trigger = "timer";
+			default-state = "off";
+		};
+
+		led-9 {
+			label = "pcierst";
+			gpios = <&gpiosb 3 GPIO_ACTIVE_LOW>;
+			linux,default-trigger = "timer";
+			default-state = "off";
+		};
+
+		led-10 {
+			label = "usbpower";
+			gpios = <&gpiosb 1 GPIO_ACTIVE_HIGH>;
+			linux,default-trigger = "timer";
+			default-state = "off";
+		};
+
 	};
 
 	gpio_keys_polled {
@@ -131,7 +154,7 @@
 };
 
 &sata {
-	status = "okay";
+	status = "disabled";
 };
 
 &sdhci0 {
@@ -146,7 +169,7 @@
 &sdhci1 {
 	wp-inverted;
 	bus-width = <4>;
-	cd-gpios = <&gpionb 3 GPIO_ACTIVE_LOW>;
+	cd-gpios = <&gpionb 10 GPIO_ACTIVE_LOW>;
 	marvell,pad-type = "sd";
 	status = "okay";
 };
@@ -178,7 +201,7 @@
 		compatible = "marvell,mv88e6085";
 		#address-cells = <1>;
 		#size-cells = <0>;
-		reg = <2>;
+		reg = <0>;
 
 		dsa,member = <0 0>;
 
@@ -194,13 +217,13 @@
 
 			port@0 {
 				reg = <0>;
-				label = "lan3";
+				label = "wan";
 				phy-handle = <&switch0phy0>;
 			};
 
 			port@1 {
 				reg = <1>;
-				label = "lan2";
+				label = "lan0";
 				phy-handle = <&switch0phy1>;
 			};
 
@@ -212,13 +235,13 @@
 
 			port@3 {
 				reg = <3>;
-				label = "lan0";
+				label = "lan2";
 				phy-handle = <&switch0phy3>;
 			};
 
 			port@4 {
 				reg = <4>;
-				label = "wan";
+				label = "lan3";
 				phy-handle = <&switch0phy4>;
 			};
 		};
